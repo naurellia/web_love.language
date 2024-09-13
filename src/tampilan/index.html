@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <img class="absolute h-screen object-cover w-full -z-10" src="../img/bg_unfaedah.png" />
+
+    <div class="h-screen flex justify-center items-center">
+      <div class="w-full max-w-4xl bg-white rounded-3xl p-8 md:p-12 flex flex-col items-center shadow-2xl mx-4 md:mx-8">
+        <!-- Bagian judul tetap di tempatnya -->
+        <div class="text-3xl md:text-4xl text-center font-bold mb-8 text-[#545454]">
+          Ketahui <span class="text-kuning">Moodmu</span> dan <br />Kirim ke Dia
+        </div>
+
+        <!-- Form dan vektor -->
+        <div class="flex flex-col md:flex-row items-center justify-between w-full">
+          <!-- Form Section -->
+          <div class="w-full md:w-1/2 mb-8 md:mb-0">
+            <form>
+              <div class="mb-4">
+                <label for="username" class="block text-[#545454] text-xl font-mono font-semibold pt-2">Nama Kamu</label>
+                <input
+                  type="text"
+                  id="username"
+                  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="username2" class="block text-[#545454] text-xl font-mono font-semibold pt-2">Nama Pasangan</label>
+                <input
+                  type="text"
+                  id="username2"
+                  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                />
+              </div>
+              <div class="mt-8">
+                <a
+                  href="../select/index.html"
+                  class="bg-kuning text-white p-2 font-semibold rounded-lg text-xl shadow-md text-center w-full block hover:bg-orange-400"
+                  >Lanjutkan</a
+                >
+              </div>
+            </form>
+          </div>
+
+          <!-- Bagian vektor -->
+          <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+            <img class="w-48 md:w-64" src="../img/vektor.png" alt="Sidebar Image" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.querySelector('a[href="../select/index.html"]').addEventListener('click', function(e) {
+        e.preventDefault(); // Mencegah link langsung membuka halaman
+        const namaKamu = document.getElementById('username').value;
+        const namaPasangan = document.getElementById('username2').value;
+
+        // Cek apakah input sudah diisi
+        if (namaKamu.trim() === "" || namaPasangan.trim() === "") {
+          alert("Harap isi Nama Kamu dan Nama Pasangan sebelum melanjutkan.");
+          return; // Jika input kosong, hentikan proses
+        }
+
+        // Simpan input ke localStorage
+        localStorage.setItem('namaKamu', namaKamu);
+        localStorage.setItem('namaPasangan', namaPasangan);
+
+        // Redirect ke halaman berikutnya
+        window.location.href = '../select/index.html';
+      });
+    </script>
+  </body>
+</html>

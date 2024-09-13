@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+  </head>
+  <body class="relative">
+    <img
+      class="absolute h-screen object-cover w-full -z-10 opacity-45"
+      src="../img/bg_unfaedah.png"
+    />
+    <div class="min-h-screen flex flex-col justify-center items-center">
+      <div class="bg-white rounded-3xl p-8 md:p-12 flex flex-col items-center shadow-2xl w-full max-w-4xl">
+        <!-- Bagian judul -->
+        <div class="text-3xl md:text-4xl text-center font-bold mb-8 text-abu">
+          Pilih <span class="text-kuning">Moodmu</span><br /> Saat ini
+        </div>
+
+        <!-- Bagian pilihan mood -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 justify-center items-center">
+          <a href="../result/love.html" class="flex flex-col items-center text-abu font-sans font-bold text-lg md:text-3xl hover:ring-offset-2 hover:ring-2 hover:ring-kuning hover:rounded-2xl">
+            <img class="object-cover w-24 h-24 md:w-36 md:h-36 m-3 md:m-6 hover:p-1 md:hover:p-3" src="../img/emoji_love.png" />Bucin
+          </a>
+          <a href="../result/sedih.html" class="flex flex-col items-center text-abu font-sans font-bold text-lg md:text-3xl hover:ring-offset-2 hover:ring-2 hover:ring-kuning hover:rounded-2xl">
+            <img class="object-cover w-24 h-24 md:w-36 md:h-36 m-3 md:m-6 hover:p-1 md:hover:p-3" src="../img/emoji_sad.png" />Sedih
+          </a>
+          <a href="../result/datar.html" class="flex flex-col items-center text-abu font-sans font-bold text-lg md:text-3xl hover:ring-offset-2 hover:ring-2 hover:ring-kuning hover:rounded-2xl">
+            <img class="object-cover w-24 h-24 md:w-36 md:h-36 m-3 md:m-6 hover:p-1 md:hover:p-3" src="../img/emoji_datar.png" />Datar
+          </a>
+          <a href="../result/bete.html" class="flex flex-col items-center text-abu font-sans font-bold text-lg md:text-3xl hover:ring-offset-2 hover:ring-2 hover:ring-kuning hover:rounded-2xl">
+            <img class="object-cover w-24 h-24 md:w-36 md:h-36 m-3 md:m-6 hover:p-1 md:hover:p-3" src="../img/emoji_bete.png" />Bete
+          </a>
+          <a href="../result/marah.html" class="flex flex-col items-center text-abu font-sans font-bold text-lg md:text-3xl hover:ring-offset-2 hover:ring-2 hover:ring-kuning hover:rounded-2xl">
+            <img class="object-cover w-24 h-24 md:w-36 md:h-36 m-3 md:m-6 hover:p-1 md:hover:p-3" src="../img/emoji_marah.png" />Ngambek
+          </a>
+        </div>
+      </div>
+
+      <!-- Tombol Kembali -->
+      <div class="flex justify-center pt-5 items-center w-full max-w-4xl">
+        <a
+          href="../tampilan/index.html"
+          class="bg-kuning rounded-md text-white text-2xl p-3 font-semibold w-40 sm:w-56 hover:bg-orange-400 text-center"
+        >
+          Kembali
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Ambil query string dari URL
+      const params = new URLSearchParams(window.location.search);
+      const namaKamu = params.get('namaKamu');
+      const namaPasangan = params.get('namaPasangan');
+
+      // Cek apakah data tersedia
+      if (namaKamu && namaPasangan) {
+        // Ganti teks di bagian yang diinginkan
+        document.getElementById('namaKamu').textContent = namaKamu;
+        document.getElementById('namaPasangan').textContent = namaPasangan;
+      }
+    </script>
+  </body>
+</html>
